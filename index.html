@@ -8,7 +8,39 @@
     <title>Password generator</title>
 </head>
 <body>
-    
+    <header>
+        <h1>Gerador de senhas</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div>
+                <input type="text" name="password" id="password">
+                <button>Copiar</button>                
+            </div>
+            <button>Gerar senha</button> 
+            <div class="password-options">
+                <h2>Selecione o que deseja incluir</h2>
+
+                <div class="input-field">
+                    <input type="checkbox" name="characters" id="characters" checked>
+                    <label for="characters">Letras (abcd)</label>
+                </div>
+                <div class="input-field">
+                    <input type="checkbox" name="UppercaseCharacters" id="UppercaseCharacters">
+                    <label for="UppercaseCharacters">Letras Maiúsculas (ABCD)</label>
+                </div>
+                <div class="input-field">
+                    <input type="checkbox" name="numbers" id="numbers">
+                    <label for="numbers">Números (1234)</label>
+                </div>
+                <div class="input-field">
+                    <input type="checkbox" name="symbols" id="symbols">
+                    <label for="symbols">Símbolos (!@#$)</label>
+                </div>
+            </div>
+            
+        </div>
+    </main>
     
     <script src="main.js"></script>    
 </body>
