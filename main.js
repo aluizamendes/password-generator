@@ -4,6 +4,7 @@ const generateButton = document.getElementById("generatePassword")
 const rangeEl = document.getElementById("passwordRange")
 const passwordLengthEl = document.getElementById("passwordLength")
 const inputPasswordResult = document.getElementById("password")
+const copyButton = document.getElementById("copyBtn")
 
 // global variables
 let passwordRange = rangeEl.value
@@ -66,6 +67,15 @@ function getRandomNumber(max) {
     return Math.floor(Math.random() * max)
 }
 
+function handleCopyButton() {    
+    inputPasswordResult.select()    
+    inputPasswordResult.setSelectionRange(0, 99999); // for mobile devices
+
+    navigator.clipboard.writeText(inputPasswordResult.value)
+}
+
 generateButton.addEventListener("click", () => {
     generatePassword(passwordSelected)
 })
+
+copyButton.addEventListener("click", handleCopyButton)
