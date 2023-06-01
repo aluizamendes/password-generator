@@ -26,23 +26,23 @@
                     <div>
                         <div class="range-container">
                             <input type="range" name="passwordSize" id="passwordRange" max="32" min="8" value="12">
-                            <p>Tamanho: <span>12</span> caracteres</p>
+                            <p>Tamanho: <span id="passwordLength"></span> caracteres</p>
                         </div>
-                        
+
                         <div class="input-field">
-                            <input type="checkbox" name="characters" id="characters" checked>
+                            <input type="checkbox" name="characters" id="characters" value="abcdefghijklmnopqrstuvwxyz" checked>
                             <label for="characters">Letras (abcd)</label>
                         </div>
                         <div class="input-field">
-                            <input type="checkbox" name="UppercaseCharacters" id="UppercaseCharacters">
-                            <label for="UppercaseCharacters">Letras Maiúsculas (ABCD)</label>
+                            <input type="checkbox" name="UppercaseCharacters" id="uppercaseCharacters" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ">
+                            <label for="uppercaseCharacters">Letras Maiúsculas (ABCD)</label>
                         </div>
                         <div class="input-field">
-                            <input type="checkbox" name="numbers" id="numbers">
+                            <input type="checkbox" name="numbers" id="numbers" value="0123456789">
                             <label for="numbers">Números (1234)</label>
                         </div>
                         <div class="input-field">
-                            <input type="checkbox" name="symbols" id="symbols">
+                            <input type="checkbox" name="symbols" id="symbols" value="!@#$%&*?=+">
                             <label for="symbols">Símbolos (!@#$)</label>
                         </div>
                     </div>
