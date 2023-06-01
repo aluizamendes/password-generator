@@ -3,6 +3,7 @@ const optionsEl = document.querySelectorAll("input[type='checkbox']")
 const generateButton = document.getElementById("generatePassword")
 const rangeEl = document.getElementById("passwordRange")
 const passwordLengthEl = document.getElementById("passwordLength")
+const inputPasswordResult = document.getElementById("password")
 
 // global variables
 let passwordRange = rangeEl.value
@@ -51,11 +52,13 @@ function generatePassword(passwordSelected) {
         randomPassword.push(passString[randomCharIndex])
     }
 
-    console.log("Tamanho da string dos elementos selecionados: ", passString.length)
+    // display new random password on input
+    inputPasswordResult.value = randomPassword.join("")
 
-    console.log(passString)
+    // clean
+    randomPassword = []
+    
     console.log(randomPassword)
-
 }
 
 // returns a random integer from 1 to 100
