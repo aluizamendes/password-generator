@@ -5,6 +5,7 @@ const rangeEl = document.getElementById("passwordRange")
 const passwordLengthEl = document.getElementById("passwordLength")
 const inputPasswordResult = document.getElementById("password")
 const copyButton = document.getElementById("copyBtn")
+const passwordResultContainer = document.querySelector(".password-container")
 
 // global variables
 let passwordRange = rangeEl.value
@@ -75,6 +76,9 @@ function handleCopyButton() {
 }
 
 generateButton.addEventListener("click", () => {
+    passwordResultContainer.classList.add("active")
+    inputPasswordResult.disabled = false
+    
     generatePassword(passwordSelected)
 })
 

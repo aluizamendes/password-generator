@@ -43,16 +43,25 @@ button {
 .input-password-result {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     padding: .8rem;
-    padding-right: 4rem;
+    /* padding-right: 4rem; */
     border-radius: 6px;
     width: 100%;
     border: none;
     font-size: 20px;
     text-align: center;
+    transition: .4s ease-in-out;
+}
+
+.input-password-result:disabled {
+    background-color: #2f3033;
+}
+
+.input-password-result::placeholder {
+    color: #8d8d8d;
 }
 
 .copy-btn {
-    /* border: 1px solid #1e8bc3; */
+    display: none;
     padding: 8px 14px;
     border-radius: 8px;
     color: #1e8bc3;
@@ -62,6 +71,14 @@ button {
     position: absolute;
     right: 10px;
     top: 9px;
+}
+
+.password-container.active .input-password-result {
+    padding-right: 4rem;
+}
+
+.password-container.active .copy-btn{
+    display: block;
 }
 
 h1 {
