@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@5/dist/backdrop.css" />
     <title>Password generator</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
             <div class="box">
                  <div class="password-container">
                     <input type="text" name="password" id="password" class="input-password-result" placeholder="Clique em gerar senha" disabled>
-                    <button class="copy-btn" id="copyBtn"><i class="fa-solid fa-copy"></i></button>
+                    <button class="copy-btn" id="copyBtn" data-tippy-content="Copiar"a><i class="fa-solid fa-copy"></i></button>
                 </div>
                 <div class="password-options">
                     <h2>Opções da senha</h2>
@@ -53,7 +54,9 @@
             
         </div>
     </main>
-    
+
+    <script src="https://unpkg.com/popper.js@1"></script>
+    <script src="https://unpkg.com/tippy.js@5"></script>
     <script src="main.js"></script>    
 </body>
 </html>

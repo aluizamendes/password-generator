@@ -83,3 +83,12 @@ generateButton.addEventListener("click", () => {
 })
 
 copyButton.addEventListener("click", handleCopyButton)
+
+// tooltip
+tippy('[data-tippy-content]', {
+    trigger: "mouseenter focus",
+    distance: 25,
+    placement: "top",
+    theme: "light",
+    animate: "scale"
+})

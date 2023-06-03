@@ -204,3 +204,14 @@ input[type="range"] {
     outline: 3px solid #e0e0e0;
     outline-offset: 0.125rem;
   }
+
+  /* tippy lib */
+.tippy-tooltip.light-theme {
+    background-color: #eeeeee;
+    color: #242424;
+}
+
+/* arrow tip */
+.tippy-popper[x-placement^=top] .tippy-tooltip.light-theme .tippy-arrow {
+    border-top: 7px solid #eeeeee;
+}
