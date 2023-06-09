@@ -38,8 +38,6 @@ optionsEl.forEach(el => {
 
             passwordSelected.splice(index, 1)
         }
-
-        console.log(passwordSelected)
     })
 })
 
@@ -50,7 +48,6 @@ function generatePassword(passwordSelected) {
     for (let i = 0; i < Number(passwordRange) ; i++) {
         let randomCharIndex = getRandomNumber(passString.length)
 
-        console.log(randomCharIndex)
         randomPassword.push(passString[randomCharIndex])
     }
 
@@ -59,15 +56,14 @@ function generatePassword(passwordSelected) {
 
     // clean
     randomPassword = []
-    
-    console.log(randomPassword)
 }
 
-// returns a random integer from 1 to 100
+// returns a random integer
 function getRandomNumber(max) {
     return Math.floor(Math.random() * max)
 }
 
+// copy password to clipboard
 function handleCopyButton() {    
     inputPasswordResult.select()    
     inputPasswordResult.setSelectionRange(0, 99999); // for mobile devices
