@@ -43,16 +43,27 @@ optionsEl.forEach(el => {
 
 // generate random password
 function generatePassword(passwordSelected) {
-    let passString = passwordSelected.join("")
 
-    for (let i = 0; i < Number(passwordRange) ; i++) {
-        let randomCharIndex = getRandomNumber(passString.length)
+    // if no checkbox is checked
+    if (!passwordSelected.length) {
+        alert("Você precisa incluir no mínimo um tipo de caractere para gerar uma senha.")
 
-        randomPassword.push(passString[randomCharIndex])
+    } else {
+
+        passwordResultContainer.classList.add("active")
+        inputPasswordResult.disabled = false
+
+        let passString = passwordSelected.join("")
+
+        for (let i = 0; i < Number(passwordRange) ; i++) {
+            let randomCharIndex = getRandomNumber(passString.length)
+    
+            randomPassword.push(passString[randomCharIndex])
+        }
+    
+        // display new random password on input
+        inputPasswordResult.value = randomPassword.join("")
     }
-
-    // display new random password on input
-    inputPasswordResult.value = randomPassword.join("")
 
     // clean
     randomPassword = []
@@ -71,10 +82,7 @@ function handleCopyButton() {
     navigator.clipboard.writeText(inputPasswordResult.value)
 }
 
-generateButton.addEventListener("click", () => {
-    passwordResultContainer.classList.add("active")
-    inputPasswordResult.disabled = false
-    
+generateButton.addEventListener("click", () => {    
     generatePassword(passwordSelected)
 })
 
