@@ -6,6 +6,8 @@ const passwordLengthEl = document.getElementById("passwordLength")
 const inputPasswordResult = document.getElementById("password")
 const copyButton = document.getElementById("copyBtn")
 const passwordResultContainer = document.querySelector(".password-container")
+const snackBar = document.getElementById("snackBar")
+
 
 // global variables
 let passwordRange = rangeEl.value
@@ -41,12 +43,21 @@ optionsEl.forEach(el => {
     })
 })
 
+function showSnackBar(message, bgColor) {
+    snackBar.innerHTML = `<p>${message}</p>`
+    snackBar.style.backgroundColor = `${bgColor}`
+
+    snackBar.classList.add("show")
+    setTimeout(() => { snackBar.classList.remove("show") }, 4500)
+}
+
 // generate random password
 function generatePassword(passwordSelected) {
 
     // if no checkbox is checked
     if (!passwordSelected.length) {
-        alert("Você precisa incluir no mínimo um tipo de caractere para gerar uma senha.")
+
+        showSnackBar("Você precisa incluir no mínimo um tipo de caractere para gerar uma senha.", "#FFC1CE")
 
     } else {
 
@@ -80,6 +91,8 @@ function handleCopyButton() {
     inputPasswordResult.setSelectionRange(0, 99999); // for mobile devices
 
     navigator.clipboard.writeText(inputPasswordResult.value)
+
+    showSnackBar("Senha copiada para a área de transferência.", "#DDFFDD")
 }
 
 generateButton.addEventListener("click", () => {    

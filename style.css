@@ -4,6 +4,55 @@
     padding: 0;
 }
 
+.snack-bar {
+    background-color: #ec9a9a;
+    box-shadow: 0 0 18px #000000b6;
+    max-width: 500px;
+    min-width: 400px;
+    padding: .8rem 2rem;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 600;
+    color: #3b3a41;
+
+    position: fixed;
+    z-index: 99;
+    left: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);   
+
+    visibility: hidden;
+}
+
+.snack-bar.show {
+    visibility: visible;
+    animation: fadeDown .8s forwards, fadeUp .8s forwards 3.5s;
+}
+
+@keyframes fadeDown {
+    from {
+        top: 10px;
+        opacity: 0;
+    }
+
+    to {
+        top: 40px;
+        opacity: 1;
+    }    
+}
+
+@keyframes fadeUp {
+    from {
+        top: 40px;
+        opacity: 1;
+    }
+    
+    to {
+        top: 10px;
+        opacity: 0;
+    }    
+}
+
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #1d1e22;
