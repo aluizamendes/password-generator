@@ -75,7 +75,7 @@ button {
     border-radius: 8px;
     max-width: 500px;
     margin-inline: auto;
-    margin-top: 2rem;
+    margin-top: 1.2rem;
 
     display: flex;
     flex-direction: column;
@@ -130,7 +130,7 @@ button {
 
 h1 {
     text-align: center;
-    margin-top: 1.6rem;
+    margin-top: 2rem;
     color: #f1f1f1;
 }
 
